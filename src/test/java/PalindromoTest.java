@@ -15,8 +15,8 @@ public class PalindromoTest {
     }
     @Test
     public void esPalindromo() {
-        String palindromo = "Universidad de la Frontera";
-        boolean esperado = false;
+        String palindromo = "Isaac, se pesca así";
+        boolean esperado = true;
         assertEquals(esperado,palindromo1.esPalindromo(palindromo));
     }
 }

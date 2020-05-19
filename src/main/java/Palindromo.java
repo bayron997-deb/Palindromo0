@@ -28,8 +28,12 @@ public class Palindromo {
         //Este metodo formatea la cadena, quitando los espacios, comas, guiones y acentos
         palabra = palabra.toLowerCase(); //La cadena sera en minusculas
 
-        //Luego quitamos los espacios, guiones y comas
-        palabra = palabra.replace(" ","").replace(",","").replace("-","");
+        //Luego quitamos los espacios, guiones, comas,etc.
+        String[] arregloDeSimbolos = {" ",",","-","_",";",":",".",","};
+        for (String simbolo:arregloDeSimbolos) {
+            palabra = palabra.replace(simbolo,"");
+        }
+
 
         //A continuacion le quitamos los acentos
         palabra = stripAccents(palabra);
