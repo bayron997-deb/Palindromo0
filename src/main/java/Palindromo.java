@@ -23,7 +23,20 @@ public class Palindromo {
         //Finalemte llamo al metodo original donde paso a numeroString como parametro y retorno el valor booleano de este
         return esPalindromo(numeroString);
     }
-
+    public boolean[] esPalindromo(String[] palindromos){
+        boolean[] actual = new boolean[palindromos.length];
+        for (int i = 0; i < palindromos.length; i++) {
+            actual[i] = esPalindromo(palindromos[i]);
+        }
+        return actual;
+    }
+    public boolean[] esPalindromo(int[] palindromos){
+        boolean[] actual = new boolean[palindromos.length];
+        for (int i = 0; i < palindromos.length; i++) {
+            actual[i] = esPalindromo(palindromos[i]);
+        }
+        return actual;
+    }
     public static String formatearTexto(String palabra){
         //Este metodo formatea la cadena, quitando los espacios, comas, guiones y acentos
         palabra = palabra.toLowerCase(); //La cadena sera en minusculas

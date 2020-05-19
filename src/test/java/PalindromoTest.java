@@ -15,8 +15,16 @@ public class PalindromoTest {
     }
     @Test
     public void esPalindromo() {
-        String palindromo = "Isaac, se pesca así";
-        boolean esperado = true;
-        assertEquals(esperado,palindromo1.esPalindromo(palindromo));
+        String[] palindromos = {"aeiéa","programacion","Anitalavalatina","Manuel","Isaac, se pesca así","Rojo, Azul, Verde"};
+        boolean[] esperado = {true,false,true,false,true,false};
+        boolean[] actual = palindromo1.esPalindromo(palindromos);
+        assertArrayEquals(esperado,actual);
+        int[] palindromosNumericos = {2002,1991,2005};
+        boolean[] esperadoNumerico = {true,true,false};
+        boolean[] actualNumerico = palindromo1.esPalindromo(palindromosNumericos);
+        assertArrayEquals(esperadoNumerico,actualNumerico);
+
     }
+
+
 }
