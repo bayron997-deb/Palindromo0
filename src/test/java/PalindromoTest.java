@@ -33,7 +33,7 @@ public class PalindromoTest {
 
     }
     @Test
-    public void esPalindromo_AlMenosUnSimboloOGuion() {
+    public void testEsPalindromo_AlMenosUnSimboloOGuion() {
         String[] palindromos = {"Isaac, se pesca así","Rojo, Azul, Verde","Rojo-Azul-Verde","Isaac-se-pesca-así"};
         boolean[] esperado = {true,false,false,true};
         boolean[] actual = palindromo1.esPalindromo(palindromos);
@@ -48,6 +48,14 @@ public class PalindromoTest {
         boolean[] esperadoNumerico = {true,true,false};
         boolean[] actualNumerico = palindromo1.esPalindromo(palindromosNumericos);
         assertArrayEquals(esperadoNumerico,actualNumerico);
+
+    }
+    @Test
+    public void testEsPalindromo_AlMenosUnEspacio(){
+        String[] palindromos = {"Logre ver gol","Universidad de la Frontera"};
+        boolean[] esperado = {true,false};
+        boolean[] actual = palindromo1.esPalindromo(palindromos);
+        assertArrayEquals(esperado,actual);
 
     }
 
