@@ -13,18 +13,42 @@ public class PalindromoTest {
     public void tearDown() throws Exception {
         palindromo1 = null;
     }
+
+
     @Test
-    public void esPalindromo() {
-        String[] palindromos = {"aeiéa","programacion","Anitalavalatina","Manuel","Isaac, se pesca así","Rojo, Azul, Verde"};
-        boolean[] esperado = {true,false,true,false,true,false};
+    public void testEsPalindromo_Acento(){
+        String[] palindromos = {"aeiéa","programación"};
+        boolean[] esperado = {true,false};
         boolean[] actual = palindromo1.esPalindromo(palindromos);
         assertArrayEquals(esperado,actual);
+    }
+
+    @Test
+    public void testEsPalindromo_AlMenosUnaMayuscula(){
+        String[] palindromos = {"Anitalavalatina","Manuel"};
+        boolean[] esperado = {true,false};
+        boolean[] actual = palindromo1.esPalindromo(palindromos);
+        assertArrayEquals(esperado,actual);
+
+
+    }
+    @Test
+    public void esPalindromo_AlMenosUnSimboloOGuion() {
+        String[] palindromos = {"Isaac, se pesca así","Rojo, Azul, Verde","Rojo-Azul-Verde","Isaac-se-pesca-así"};
+        boolean[] esperado = {true,false,false,true};
+        boolean[] actual = palindromo1.esPalindromo(palindromos);
+        assertArrayEquals(esperado,actual);
+
+    }
+
+
+    @Test
+    public void testEsPalindromo_Numeros(){
         int[] palindromosNumericos = {2002,1991,2005};
         boolean[] esperadoNumerico = {true,true,false};
         boolean[] actualNumerico = palindromo1.esPalindromo(palindromosNumericos);
         assertArrayEquals(esperadoNumerico,actualNumerico);
 
     }
-
 
 }
